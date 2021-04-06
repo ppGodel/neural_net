@@ -75,15 +75,25 @@ tasa = tasa_original
 entradas_entrenamiento = rand.randint(0, ultimo_digito, ciclos_de_entrenamiento)
 print(weights)
 
-def sigmoid(x: Union[int,float])->float:
+def sigmoid(x: Union[int,float]) -> float:
     return 1 / (1 + np.exp(-x))
 
 def sigmoid_derivative(x: Union[int,float])-> float:
         return x * (1.0 - x)
+
+def bool_to_float(x: bool)->float:
+    return float(x)
     
+def grather_than_zero(x: float)->bool:
+    return x >= 0
+
 def neural_net():
-    def train():
+    def train(weights: np.matrixlib.matrix, train_input: List[int], gradient: Callable[[Any], float], activation: Callable[[Any], float]):
+        def _train(case:int, weights: np.matrixlib.matrix, gradient: Callable[[Any], float], activation: Callable[[Any], float]):
+            pass
+        [_train(case_input, weights, gradient, activation) for case_input in train_input]
         pass
+    
     return trained_model
 
 
