@@ -100,9 +100,9 @@ weights = np.matrix(
 entradas_entrenamiento = crear_digito_con_modelo(ultimo_digito, ciclos_de_entrenamiento, tamanio, modelos_numericos)
 entradas_prueba = np.random.randint(0, ultimo_digito, 5000)
 valor_aceptacion = 0.9
-output_function = lambda x: sigmoid(x)
+output_function = sigmoid
 fix_function = lambda x: bool(x >= 0.1)
-gradient_function = lambda x: max(0, x) # sigmoid_derivative(x)
+gradient_function = sigmoid_derivative
 
 for salida, modelo_entrada in entradas_entrenamiento:
     valores_binarios_esperados = to_binary_fixed(salida, profundidad_binario)
